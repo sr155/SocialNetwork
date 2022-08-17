@@ -1,0 +1,34 @@
+header {
+    background-image: linear-gradient(#04519b, #044687 60%, #033769);
+    color: #fff;
+    min-height: 100px;
+    padding-top: 25px;
+}
+
+header form {
+    float: right;
+}
+
+header .logo {
+    float: left;
+}
+
+
+
+/* .btn >.caret,
+.dropup > .btn > .caret{
+    border-top-color:#000 ;
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+        
+
+    }
+
+}
