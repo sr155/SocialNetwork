@@ -1,1 +1,46 @@
-<p>header works!</p>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <img
+                  src="./assets/images/cglogo.svg"
+                  alt="DCX"
+                  class="logo"
+                  style="height: 50px; width: 200px"
+                /> 
+                <span> Social Netwroking for Everyone</span>
+              </div>
+        
+      </div>
+      <div class="sr">
+        <form [formGroup]="requiredForm" novalidate (ngSubmit)="submit" id="search" class="form-inline">
+            <!-- <label>Email <input type="text" name="s-user" id="s-user"></label>&nbsp;&nbsp;
+            <label>Password <input type="text" name="s-pass" id="s-pass"></label>&nbsp;&nbsp;&nbsp;
+            -->
+            
+              <label>
+                <input   formControlName="email" placeholder="Email">
+              </label>
+             <small *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched" class="alert">*Enter correct email.
+                <small *ngIf="requiredForm.controls['email'].errors?.['required']">
+                <!-- Email is required. -->
+                </small>
+             </small>
+           &nbsp;&nbsp;&nbsp;&nbsp;
+              <label> </label>
+                <input type="password"    formControlName="password" placeholder="password">
+            <small *ngIf="requiredForm.controls['password'].invalid && requiredForm.controls['password'].touched" class="alert">*Enter strong password.
+                <small *ngIf="requiredForm.controls['password'].errors?.['required']">
+                <!-- Password is required. -->
+                </small>
+              </small> &nbsp;&nbsp;
+              
+              <button type="submit" [disabled]='requiredForm.invalid' routerLink="/products" routerLinkActive="active"  (click)="submit()">sign in</button>
+              <br>
+              <div class="checkbox">
+                <label> <input type="checkbox" /> Remember me </label>
+              </div>
+          </form>
+        </div>
+    </header>
+    </body>
