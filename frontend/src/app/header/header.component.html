@@ -1,16 +1,13 @@
-<body>
-    <header>
-        <div class="container">
-            <div>
-                <img
-                  src="./assets/images/cglogo.svg"
-                  alt="DCX"
-                  class="logo"
-                  style="height: 50px; width: 200px"
-                /> 
-                <span> Social Netwroking for Everyone</span>
-              </div>
-        
+<header>
+    <div class="container">
+      <div>
+        <img
+          src="./assets/images/cglogo.svg"
+          alt="DCX"
+          class="logo"
+          style="height: 50px; width: 200px"
+        /> 
+        <span> Social Netwroking for Everyone</span>
       </div>
       <div class="sr">
         <form [formGroup]="requiredForm" novalidate (ngSubmit)="submit" id="search" class="form-inline">
@@ -18,8 +15,8 @@
             <label>Password <input type="text" name="s-pass" id="s-pass"></label>&nbsp;&nbsp;&nbsp;
             -->
             
-              <label>
-                <input   formControlName="email" placeholder="Email">
+              <label for="email">
+                <input type="text"  formControlName="email" value="value must appear"  placeholder="Email">
               </label>
              <small *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched" class="alert">*Enter correct email.
                 <small *ngIf="requiredForm.controls['email'].errors?.['required']">
@@ -34,13 +31,11 @@
                 <!-- Password is required. -->
                 </small>
               </small> &nbsp;&nbsp;
-              
-              <button type="submit" [disabled]='requiredForm.invalid' routerLink="/products" routerLinkActive="active"  (click)="submit()">sign in</button>
-              <br>
-              <div class="checkbox">
-                <label> <input type="checkbox" /> Remember me </label>
-              </div>
+              <button type="submit"  routerLink="/products" routerLinkActive="active"  (click)="submit()">Login</button>
+              <!-- <button type="submit" [disabled]='requiredForm.invalid' routerLink="/products" routerLinkActive="active"  (click)="submit()">Login</button> -->
+            
           </form>
+          
         </div>
-    </header>
-    </body>
+    </div>
+  </header>
