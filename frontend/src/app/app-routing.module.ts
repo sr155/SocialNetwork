@@ -14,9 +14,9 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   // {path:'profile',component:ProfileComponent},
   // {path:'members',component:MembersComponent},
-  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'profile',component:ProfileComponent},
 
-  {path:'members',component:MembersComponent,canActivate:[AuthGuard]},
+  {path:'members',component:MembersComponent},
   {path:'login',component:LoginComponent}
   
 ];
