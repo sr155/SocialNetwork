@@ -10,7 +10,7 @@
         <span> Social Netwroking for Everyone</span>
       </div>
       <div class="sr">
-        <form [formGroup]="requiredForm" novalidate (ngSubmit)="submit" id="search" class="form-inline">
+        <form [formGroup]="requiredForm" novalidate (ngSubmit)="onSubmit()" id="search" class="form-inline">
             <!-- <label>Email <input type="text" name="s-user" id="s-user"></label>&nbsp;&nbsp;
             <label>Password <input type="text" name="s-pass" id="s-pass"></label>&nbsp;&nbsp;&nbsp;
             -->
@@ -31,7 +31,7 @@
                 <!-- Password is required. -->
                 </small>
               </small> &nbsp;&nbsp;
-              <button type="submit"  routerLink="/products" routerLinkActive="active"  (click)="submit()">Login</button>
+              <button type="submit" [disabled]='requiredForm.invalid' routerLink="/home" routerLinkActive="active"  (click)="onSubmit()">Login</button>
               <!-- <button type="submit" [disabled]='requiredForm.invalid' routerLink="/products" routerLinkActive="active"  (click)="submit()">Login</button> -->
             
           </form>

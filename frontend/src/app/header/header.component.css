@@ -57,6 +57,7 @@ header {
 
 header form {
     float: right;
+    color:black;
 }
 
 header .logo {

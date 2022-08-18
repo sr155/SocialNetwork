@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators ,FormArray,FormControl} from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -20,7 +20,8 @@ requiredForm=new FormGroup({
   email:new FormControl(),
   password:new FormControl()
 });
-constructor(private fb: FormBuilder) {
+constructor(private fb: FormBuilder,private router: Router,) {
+ 
    this.myForm();
 }
 
@@ -33,10 +34,25 @@ myForm() {
          
    });
 }
-submit(){
+onSubmit(){
   alert("login successsfull")
-  // window.location.reload();
+  //  window.location.reload();
+  if(!this.requiredForm.valid){
+        return;
+      }
+      window.location.reload();
+      this.router.navigate(['/home'])
+      
+  //  localStorage.setItem('user',this.requiredForm.value)
+      
 }
+// onSubmit(){
+//   if(!this.requiredForm.valid){
+//     return;
+//   }
+//   localStorage.setItem('user',this.requiredForm.value)
+ // this.router.navigate(['/home'])
+// }
 ngOnInit()
 {
 
